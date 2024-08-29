@@ -2,7 +2,7 @@
 set_time_limit(1200);
 function manejo($user, $pasw, $ayer)
 {
-  include __DIR__."conexion.php";
+  include __DIR__."/conexion.php";
 
   // Preparar la consulta SQL con parámetros
   $stmt = $mysqli->prepare("SELECT hash FROM masgps.hash WHERE user=? AND pasw=?");
@@ -13,7 +13,7 @@ function manejo($user, $pasw, $ayer)
   $hash = $data['hash'];
   $stmt->close();
 
-  include __DIR__."listado.php";
+  include __DIR__."/listado.php";
 
   // Inicializar cURL
   $curl = curl_init();
